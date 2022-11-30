@@ -20,24 +20,24 @@ resource "azurerm_web_pubsub" "pike" {
 
 
 variable "sku" {
-  type=string
-  default="Standard_S1"
+  type    = string
+  default = "Standard_S1"
 }
 
 variable "location" {
-  type=string
+  type    = string
   default = "uksouth"
 }
 
 variable "rg_name" {
-  type=string
+  type = string
 }
 
 variable "name" {
-  type=string
+  type = string
 }
 
 variable "capacity" {
-  type=number
-  default=1
+  type    = number
+  default = 1
 }
