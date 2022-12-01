@@ -41,7 +41,7 @@ No requirements.
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.33.0 |
 
 ## Modules
 
@@ -58,15 +58,17 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_capacity"></a> [capacity](#input\_capacity) | n/a | `number` | `1` | no |
-| <a name="input_common_tags"></a> [common\_tags](#input\_common\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"uksouth"` | no |
 | <a name="input_name"></a> [name](#input\_name) | n/a | `string` | n/a | yes |
 | <a name="input_rg_name"></a> [rg\_name](#input\_rg\_name) | n/a | `string` | n/a | yes |
 | <a name="input_sku"></a> [sku](#input\_sku) | n/a | `string` | `"Standard_S1"` | no |
+| <a name="input_tags"></a> [tags](#input\_tags) | This is to help you add tags to your cloud objects | `map(any)` | n/a | yes |
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_pubsub"></a> [pubsub](#output\_pubsub) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 ## Policy
@@ -85,11 +87,11 @@ resource "azurerm_role_definition" "terraform_pike" {
 
   permissions {
     actions = [
-    "Microsoft.ContainerRegistry/registries/delete",
-    "Microsoft.ContainerRegistry/registries/operationStatuses/read",
-    "Microsoft.ContainerRegistry/registries/read",
-    "Microsoft.ContainerRegistry/registries/write",
-    "Microsoft.Resources/subscriptions/resourcegroups/read"]
+    "Microsoft.SignalRService/WebPubSub/operationStatuses/read",
+    "Microsoft.SignalRService/webPubSub/delete",
+    "Microsoft.SignalRService/webPubSub/listKeys/action",
+    "Microsoft.SignalRService/webPubSub/read",
+    "Microsoft.SignalRService/webPubSub/write"]
     not_actions = []
   }
 

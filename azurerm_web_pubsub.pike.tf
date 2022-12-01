@@ -16,28 +16,5 @@ resource "azurerm_web_pubsub" "pike" {
   identity {
     type = "SystemAssigned"
   }
-}
-
-
-variable "sku" {
-  type    = string
-  default = "Standard_S1"
-}
-
-variable "location" {
-  type    = string
-  default = "uksouth"
-}
-
-variable "rg_name" {
-  type = string
-}
-
-variable "name" {
-  type = string
-}
-
-variable "capacity" {
-  type    = number
-  default = 1
+  tags = var.tags
 }
